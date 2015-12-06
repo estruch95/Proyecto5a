@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.estruch18.proyecto5a.ActivityConsultas"
+    tools:showIn="@layout/activity_consultas">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Que tipo de registro desea consultar?"
+        android:id="@+id/tvInfoConsultas"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp" />
+
+    <RadioGroup
+        android:layout_width="120dp"
+        android:layout_height="90dp"
+        android:layout_below="@+id/tvInfoConsultas"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/grupoRegistro">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profesor"
+            android:id="@+id/rbProfesor"
+            android:checked="true" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estudiante"
+            android:id="@+id/rbEstudiante"
+            android:checked="false" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Todos"
+            android:id="@+id/rbTodos"
+            android:checked="false" />
+    </RadioGroup>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="350dp"
+        android:id="@+id/lvResultado"
+        android:layout_below="@+id/grupoRegistro"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp" />
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvResultadosConsulta"
+        android:layout_below="@+id/grupoRegistro"
+        android:layout_alignParentStart="true"
+        android:text="RESULTADOS OBTENIDOS"
+        android:visibility="invisible"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Consultar"
+        android:id="@+id/btnConsultar"
+        android:onClick="accionBtnConsultar"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/lvResultado" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Ciclo:"
+        android:id="@+id/tvCiclo:"
+        android:layout_alignTop="@+id/grupoRegistro"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/etCiclo"
+        android:layout_alignTop="@+id/grupoRegistro"
+        android:layout_alignEnd="@+id/tvResultadosConsulta" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Curso:"
+        android:id="@+id/tvCurso"
+        android:layout_below="@+id/tvCiclo:"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/etCurso"
+        android:layout_below="@+id/etCiclo"
+        android:layout_alignStart="@+id/etCiclo"
+        android:layout_alignEnd="@+id/tvResultadosConsulta" />
+
+</RelativeLayout>

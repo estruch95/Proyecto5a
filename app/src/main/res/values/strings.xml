@@ -3,4 +3,5 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_activity_profesor">Activity_profesor</string>
     <string name="title_activity_activity_alumno">Activity_alumno</string>
+    <string name="title_activity_activity_consultas">ActivityConsultas</string>
 </resources>

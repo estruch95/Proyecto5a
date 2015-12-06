@@ -10,10 +10,16 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     //Atributos de la clase
-    private Button btnAddProfe, btnAddEstudiante;
+    private MyDbAdapter dbAdapter;
+    private Button btnAddProfe, btnAddEstudiante, btnEliminarBBDD, btnEliminarRegistro, btnConsultarRegistro;
+    private TextView tvId;
+    private EditText etID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +55,12 @@ public class MainActivity extends AppCompatActivity {
     public void declaracionViews(){
         btnAddProfe = (Button)findViewById(R.id.btnAddProfesor);
         btnAddEstudiante = (Button)findViewById(R.id.btnAddEstudiante);
+        btnEliminarBBDD = (Button)findViewById(R.id.btnEliminarBBDD);
+        btnEliminarRegistro = (Button)findViewById(R.id.btnEliminarRegistro);
+        btnConsultarRegistro = (Button)findViewById(R.id.btnConsultarRegistro);
+
+        tvId = (TextView)findViewById(R.id.tvID);
+        etID = (EditText)findViewById(R.id.etID);
     }
 
     //LISTENERS DE LOS BOTONES
@@ -61,6 +73,28 @@ public class MainActivity extends AppCompatActivity {
     public void accionBtnAddEstudiante(View v){
         Intent actEstudiante = new Intent(getApplicationContext(), Activity_alumno.class);
         startActivity(actEstudiante);
+    }
+
+    public void accionBtnEliminarBBDD(View v){
+        dbAdapter = new MyDbAdapter(this);
+        dbAdapter.open();
+        dbAdapter.dropBBDD();
+        //INFO
+        Toast.makeText(getApplicationContext(), "La BBDD ha sido eliminada", Toast.LENGTH_SHORT).show();
+    }
+
+    public void accionBtnEliminarRegistro(View v){
+        dbAdapter = new MyDbAdapter(this);
+        dbAdapter.open();
+        dbAdapter.dropRegistro(Integer.parseInt(etID.getText().toString()));
+        //INFO
+        Toast.makeText(getApplicationContext(), "El registro ha sido eliminado", Toast.LENGTH_SHORT).show();
+        etID.setText("");
+    }
+
+    public void accionBtnConsultas(View v){
+        Intent actConsultas = new Intent(getApplicationContext(), ActivityConsultas.class);
+        startActivity(actConsultas);
     }
 
 }

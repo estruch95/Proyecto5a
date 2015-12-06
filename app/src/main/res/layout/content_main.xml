@@ -18,8 +18,9 @@
         android:text="Insertar profesor"
         android:id="@+id/btnAddProfesor"
         android:onClick="accionBtnAddProfesor"
-        android:layout_above="@+id/btnAddEstudiante"
+        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
+        android:layout_marginTop="50dp"
         android:layout_alignParentEnd="true" />
 
     <Button
@@ -28,7 +29,87 @@
         android:text="Insertar Estudiante"
         android:id="@+id/btnAddEstudiante"
         android:onClick="accionBtnAddEstudiante"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/btnAddProfesor"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eliminar BBDD"
+        android:id="@+id/btnEliminarBBDD"
+        android:onClick="accionBtnEliminarBBDD"
+        android:layout_centerVertical="true"
+        android:layout_alignEnd="@+id/btnAddEstudiante"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eliminar Profe/Estudiante"
+        android:id="@+id/btnEliminarRegistro"
+        android:onClick="accionBtnEliminarRegistro"
+        android:layout_below="@+id/btnEliminarBBDD"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/btnEliminarBBDD" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="INSERCIONES"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="ELIMINACIONES"
+        android:id="@+id/textView2"
+        android:layout_above="@+id/btnEliminarBBDD"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Introduce ID (Eliminar registro):"
+        android:id="@+id/tvID"
+        android:visibility="visible"
+        android:layout_below="@+id/btnEliminarRegistro"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/etID"
+        android:layout_below="@+id/tvID"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Consultar registro"
+        android:id="@+id/btnConsultarRegistro"
+        android:onClick="accionBtnConsultas"
+        android:layout_below="@+id/tvConsultas"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/btnEliminarRegistro"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="CONSULTAS"
+        android:id="@+id/tvConsultas"
+        android:layout_below="@+id/etID"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+
 </RelativeLayout>

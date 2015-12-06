@@ -25,6 +25,10 @@
         <activity
             android:name=".Activity_alumno"
             android:label="@string/title_activity_activity_alumno"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ActivityConsultas"
+            android:label="@string/title_activity_activity_consultas"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
